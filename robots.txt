@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: tushushare.github.io/sitemap.xml

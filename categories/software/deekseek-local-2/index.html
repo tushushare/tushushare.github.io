@@ -9,47 +9,44 @@
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2025-02-23T13:20:00+08:00">
 <meta property="article:modified_time" content="2025-02-23T13:20:00+08:00">
-<meta name=keywords content="实用软件,新奇网站,好玩软件,好玩工具,好工具,好软件,有趣软件,有趣网站,新奇软件,网赚,网络赚钱,被动收入,被动收益">
+<meta name=Keywords content="实用软件,新奇网站,好玩软件,好玩工具,好工具,好软件,有趣软件,有趣网站,新奇软件,网赚,网络赚钱,被动收入,被动收益">
 <meta name=description content="教你希望本地部署的DeepSeek投喂数据，让DeepSeek更懂你。通过RAG技术，你可以将PDF、CSV、TXT等格式的文件上传给DeepSeek，增强其知识储备和回答准确性。文章详细介绍了RAG的概念、如何拉取`nomic-embed-text`工具，以及在WebUI中设置文本嵌入模型和投喂数据的具体步骤。">
 <meta name=author content="土叔">
 <meta property="og:url" content="https://www.tushushare.com/categories/software/deekseek-local-2/">
 <link rel="shortcut icon" href=/img/favicon.ico type=image/x-icon>
+<link rel=icon href=/img/favicon.png type=image/png>
+<link rel="alternate icon" href=/img/favicon.png type=image/svg+xml>
 <link rel=stylesheet href=/css/normalize.css>
 <link rel=stylesheet href=/css/style.css>
 <script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js></script>
-<script data-ad-client=ca-pub-7116725766468109 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7116725766468109" crossorigin=anonymous></script>
+<link href=https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css rel=stylesheet>
 </head>
 <body>
 <header id=header class=clearfix>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-961QQ8FNDM"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-961QQ8FNDM')</script>
 <div class=container>
 <div class=col-group>
 <div class=site-name>
-<a id=logo href=https://www.tushushare.com/ target=_blank>
+<a id=logo href=https://www.tushushare.com/>
 土叔分享
 </a>
 <p class=description>实用软件，有趣网站，好家伙都在这里！</p>
 </div>
 <div>
 <nav id=nav-menu class=clearfix>
-<a href=https://www.tushushare.com/>首页</a>
-<a href=https://www.tushushare.com/categories/chatgpt title=ChatGPT target=_blank>ChatGPT</a>
-<a href=https://www.tushushare.com/categories/baidu title=百度系列 target=_blank>百度系列</a>
-<a href=https://www.tushushare.com/categories/software title=实用软件 target=_blank>实用软件</a>
-<a href=https://www.tushushare.com/categories/website title=新奇网站 target=_blank>新奇网站</a>
-<a href=https://www.tushushare.com/categories/games title=有趣游戏 target=_blank>有趣游戏</a>
-<a href=https://www.tushushare.com/categories/money title=网络赚钱 target=_blank>网络赚钱</a>
-<a href=https://www.tushushare.com/categories/other title=杂谈 target=_blank>杂谈</a>
-<a href=https://www.tushushare.com/archives title=归档 target=_blank>归档</a>
-<a href=https://www.tushushare.com/about title=关于 target=_blank>关于</a>
+<a href=https://www.tushushare.com/>Home</a>
+<a href=https://www.tushushare.com/categories/chatgpt title=ChatGPT>ChatGPT</a>
+<a href=https://www.tushushare.com/categories/baidu title=百度系列>百度系列</a>
+<a href=https://www.tushushare.com/categories/software title=实用软件>实用软件</a>
+<a href=https://www.tushushare.com/categories/website title=新奇网站>新奇网站</a>
+<a href=https://www.tushushare.com/categories/games title=有趣游戏>有趣游戏</a>
+<a href=https://www.tushushare.com/categories/money title=网络赚钱>网络赚钱</a>
+<a href=https://www.tushushare.com/categories/other title=杂谈>杂谈</a>
+<a href=https://www.tushushare.com/archives title=归档>归档</a>
+<a href=https://www.tushushare.com/about title=关于>关于</a>
 </nav>
 </div>
 </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7116725766468109" crossorigin=anonymous></script>
-<ins class=adsbygoogle style=display:block data-ad-client=ca-pub-7116725766468109 data-ad-slot=8627509411 data-ad-format=auto data-full-width-responsive=true>
-</ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
 </header>
 <div id=body>
@@ -57,42 +54,21 @@
 <div class=col-group>
 <div class=col-8 id=main>
 <div class=res-cons>
-<style type=text/css>.post-toc{position:fixed;width:200px;margin-left:-210px;padding:5px 10px;font-family:Athelas,STHeiti,Microsoft Yahei,serif;font-size:12px;border:1px solid rgba(0,0,0,7%);border-radius:5px;background-color:rgba(255,255,255,.98);background-clip:padding-box;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.125);box-shadow:1px 1px 2px rgba(0,0,0,.125);word-wrap:break-word;white-space:nowrap;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:999;cursor:pointer;max-height:70%;overflow-y:auto;overflow-x:hidden}.post-toc .post-toc-title{width:100%;margin:0 auto;font-size:20px;font-weight:400;text-transform:uppercase;text-align:center}.post-toc .post-toc-content{font-size:15px}.post-toc .post-toc-content>nav>ul{margin:10px 0}.post-toc .post-toc-content ul{padding-left:20px;list-style:square;margin:.5em;line-height:1.8em}.post-toc .post-toc-content ul ul{padding-left:15px;display:none}@media print,screen and (max-width:1057px){.post-toc{display:none}}</style>
-<div class=post-toc style=position:absolute;top:188px>
-<h2 class=post-toc-title>文章目录</h2>
-<div class=post-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#写在前面>写在前面</a></li>
-<li><a href=#一rag是什么>一、RAG是什么？</a></li>
-<li><a href=#二-拉取nomic-embed-text>二、 拉取<code>nomic-embed-text</code></a></li>
-<li><a href=#三rag设置>三、RAG设置</a></li>
-<li><a href=#四添加新知识>四、添加新知识</a></li>
-<li><a href=#五其他数据投喂测试>五、其他数据投喂测试</a></li>
-</ul>
-</li>
-<li><a href=#deepseek本地部署安装包下载链接>DeepSeek本地部署安装包下载链接</a></li>
-</ul>
-</nav>
-</div>
-</div>
-<script type=text/javascript>$(document).ready(function(){var a=$(".post-toc"),b,c,d;a.length&&(b=$("#main").offset().left,b<220&&a.css({width:b-10,"margin-left":0-b}),c=a.offset().top-20,d={start:{position:"absolute",top:c},process:{position:"fixed",top:20}},$(window).scroll(function(){var b=$(window).scrollTop();b<c?a.css(d.start):a.css(d.process)})),$("#TableOfContents").children().length<1&&$(".post-toc").remove()})</script>
 <article class=post>
 <header>
 <h1 class=post-title>如何给本地部署的DeepSeek投喂数据，让他学习你的一切，让他比你更懂你自己！</h1>
 </header>
-<date class="post-meta meta-date">
-2025年2月23日
-</date>
-<div class=post-meta>
-<span>|</span>
-<span class=meta-category><a href=/categories/software target=_blank>software</a></span>
+<time datetime=2025-02-23T05:20:00Z class="post-meta meta-date dt-published">
+2025-02-23
+</time>
+<div class="post-meta meta-category">
+<span>&nbsp;|</span>
+<a href=/categories/software target=_blank>software</a>
 </div>
 <div class=post-meta>
-<span id=busuanzi_container_page_pv>|<span id=busuanzi_value_page_pv></span><span>
-阅读</span></span>
+<span id=busuanzi_container_page_pv>&nbsp;|
+<span id=busuanzi_value_page_pv></span> <span>reads</span>
+</span>
 </div>
 <div class=post-content>
 <p><strong>大家好，我是土叔，今天给大家分享一篇不错的deepseek本地部署教程。</strong></p>
@@ -109,15 +85,21 @@
 <p>我们就问问昨天部署好的<code>DeepSeek</code>好了。</p>
 <p>首先我们在命令行输入：<code>ollama run deepseek-r1:1.5b</code> 命令，启动<code>DeepSeek</code></p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/WHUOtpQNXkv8B5z.png>
 <img class=mx-auto alt=启动DeepSeek src=https://s2.loli.net/2025/02/23/WHUOtpQNXkv8B5z.png>
+</a>
 </p>
 <p>然后打开浏览器并输入快捷键：ctrl+shift+l 调出<code>WebUI</code>可视化AI界面</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/co62smfFU53VWKx.png>
 <img class=mx-auto alt=启动WebUI src=https://s2.loli.net/2025/02/23/co62smfFU53VWKx.png>
+</a>
 </p>
 <p>输入：RAG是什么？</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/L3h5QXAjClEVtqn.png>
 <img class=mx-auto alt=RAG src=https://s2.loli.net/2025/02/23/L3h5QXAjClEVtqn.png>
+</a>
 </p>
 <p>翻译成大白话就是：我们把知识放到知识库里，然后把它投喂给人工智能。我们需要用一个量化的工具，把各种格式的数据量化给人工智能，让它能看得懂。</p>
 <p>人工智能通过对这些知识的学习后，以后你再问它的时候，他就能将知识提取出来，加工处理后回答你的问题。</p>
@@ -127,56 +109,80 @@
 <p>各种开源免费的RAG工具挺多，我们这里选择最近比较获得<code>ollama</code> 提供的<code>nomic-embed-text</code>。</p>
 <p><a href=https://ollama.com/library/nomic-embed-text>https://ollama.com/library/nomic-embed-text</a></p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/GqaFZbO4I7UTfin.png>
 <img class=mx-auto alt=nomic-embed-text src=https://s2.loli.net/2025/02/23/GqaFZbO4I7UTfin.png>
+</a>
 </p>
 <p>我们使用上面圈出来的命令拉取即可，274M，大约1min左右就可以下完，出现【success】字样表示下载成功。</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/XU1d2pVgcb3tCOq.png>
 <img class=mx-auto alt=拉取nomic-embed-text src=https://s2.loli.net/2025/02/23/XU1d2pVgcb3tCOq.png>
+</a>
 </p>
 <h3 id=三rag设置>三、RAG设置</h3>
 <p>打开<code>WebUI</code>界面，我们会看到一个RAG设置<strong>文本嵌入模型</strong>。</p>
 <p>文本嵌入模型就是把我们投喂的各种文档数据量化成<code>DeepSeek</code>认识的数据。</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/vgFRXMCPJu9f3In.png>
 <img class=mx-auto alt=RAG设置 src=https://s2.loli.net/2025/02/23/vgFRXMCPJu9f3In.png>
+</a>
 </p>
 <h3 id=四添加新知识>四、添加新知识</h3>
 <p>工具都准备好后，我们开始准备给<code>DeepSeek</code>投喂数据&mldr;&mldr;</p>
 <p><strong>① 投喂前不认识晓凡</strong></p>
 <p>在投喂数据之前，我们问问它认不认识晓凡。结果不用我说了，肯定是不知道的</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/5VQdz4JLmYkMOHt.png>
 <img class=mx-auto alt=投喂前 src=https://s2.loli.net/2025/02/23/5VQdz4JLmYkMOHt.png>
+</a>
 </p>
 <p><strong>② 准备投喂的数据</strong></p>
 <p>接下来，将晓凡事先准备好的关于晓凡的简介【程序员晓凡.md】文档投喂给它，文档内容如下。</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/wysLnDE2VTt3Sa9.png>
 <img class=mx-auto alt=程序员晓凡简介 src=https://s2.loli.net/2025/02/23/wysLnDE2VTt3Sa9.png>
+</a>
 </p>
 <p><strong>③ 投喂数据</strong></p>
 <p>
+<a data-fancybox=gallery href=https://img2024.cnblogs.com/blog/2381533/202502/2381533-20250216100458160-1667763085.png>
 <img class=mx-auto alt=添加新知识 src=https://img2024.cnblogs.com/blog/2381533/202502/2381533-20250216100458160-1667763085.png>
+</a>
 </p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/KwiGyVmlFfxO9nz.png>
 <img class=mx-auto alt=投喂程序员晓凡简介 src=https://s2.loli.net/2025/02/23/KwiGyVmlFfxO9nz.png>
+</a>
 </p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/E7TsQSGix1d9eCJ.png>
 <img class=mx-auto alt=deepseek成功消化投喂知识 src=https://s2.loli.net/2025/02/23/E7TsQSGix1d9eCJ.png>
+</a>
 </p>
 <p><strong>④ 投喂完成后，已经认识晓凡了</strong></p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/GusWDhNxdYpvKbk.png>
 <img class=mx-auto alt=成功投喂后认识晓凡了 src=https://s2.loli.net/2025/02/23/GusWDhNxdYpvKbk.png>
+</a>
 </p>
 <h3 id=五其他数据投喂测试>五、其他数据投喂测试</h3>
 <p>我们准备一个【学生选课系统接口文档 V1.1.md】接口文档</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/DoLBrXIxRKtZdMQ.png>
 <img class=mx-auto alt=学生选课系统接口文档 src=https://s2.loli.net/2025/02/23/DoLBrXIxRKtZdMQ.png>
+</a>
 </p>
 <p>按照上面方法进行投喂</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/Dp8G1kWZfV4jn9z.png>
 <img class=mx-auto alt=添加新知识 src=https://s2.loli.net/2025/02/23/Dp8G1kWZfV4jn9z.png>
+</a>
 </p>
 <p>接下来，我们我们让<code>DeepSeek</code> 用Java语言实现【获取学生选课信息】这一接口功能</p>
 <p>
+<a data-fancybox=gallery href=https://s2.loli.net/2025/02/23/1C7uJeR4HEbG8qc.gif>
 <img class=mx-auto alt=选课接口 src=https://s2.loli.net/2025/02/23/1C7uJeR4HEbG8qc.gif>
+</a>
 </p>
 <p>本期内容到这儿就结束了，希望对您有所帮助。</p>
 <h2 id=deepseek本地部署安装包下载链接>DeepSeek本地部署安装包下载链接</h2>
@@ -185,25 +191,27 @@
 <p>原文来自：https://www.cnblogs.com/xiezhr/p/18714692</p>
 <p>想要及时了解更多好玩有趣的网站、实用的软件，扫码关注公众号，就不会错过精彩的推荐啦。</p>
 <p>
+<a data-fancybox=gallery href=/img/qrcode_for_weixin.bmp>
 <img class=mx-auto alt=扫码关注 src=/img/qrcode_for_weixin.bmp>
+</a>
 </p>
 </div>
 <div class=post-archive>
 <ul class=post-copyright>
-<li><strong>原文作者：</strong><a rel=author href=https://www.tushushare.com/ target=_blank>土叔</a></li>
-<li style=word-break:break-all><strong>原文链接：</strong><a href=https://www.tushushare.com/categories/software/deekseek-local-2/ target=_blank>https://www.tushushare.com/categories/software/deekseek-local-2/</a></li>
-<li><strong>版权声明：</strong>本作品采用<a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>知识共享署名-非商业性使用</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+<li><strong>Author: </strong><a rel=author href=https://www.tushushare.com/>土叔分享</a></li>
+<li style=word-break:break-all><strong>Link: </strong><a href=https://www.tushushare.com/categories/software/deekseek-local-2/>https://www.tushushare.com/categories/software/deekseek-local-2/</a></li>
+<li><strong>License: </strong>This work is under a <a rel=license href=https://creativecommons.org/licenses/by-nc-nd/4.0/>知识共享署名-非商业性使用</a>. Kindly fulfill the requirements of the aforementioned License when adapting or creating a derivative of this work.</li>
 </ul>
 </div>
 <br>
 <div class=post-archive>
 <h2>See Also</h2>
 <ul class=listing>
-<li><a href=/categories/software/deekseek-local-1/ target=_blank>DeepSeek本地部署：无须任何经验，小白也能轻松搞定！</a></li>
-<li><a href=/categories/software/deekseek-local-3/ target=_blank>本地部署DeepSeek后，颜值不够，没有好看的交互界面那怎么行！</a></li>
-<li><a href=/categories/software/deekseek-mynote/ target=_blank>DeepSeek 搭建本地个人知识库，一键安装及保姆级教程来了！</a></li>
-<li><a href=/categories/software/250218-fanyi-immersivetranslate/ target=_blank>打破语言壁垒！沉浸式翻译神器5大黑科技带你畅游全球资讯！</a></li>
-<li><a href=/categories/software/ios-movie-app/ target=_blank>【持续更新】免费追剧神器大集合！苹果/安卓/iOS/Android双平台观影APP一键解锁，高清无广畅看全球热剧！</a></li>
+<li><a href=/categories/software/deekseek-local-3/>本地部署DeepSeek后，颜值不够，没有好看的交互界面那怎么行！</a></li>
+<li><a href=/categories/software/deekseek-local-1/>DeepSeek本地部署：无须任何经验，小白也能轻松搞定！</a></li>
+<li><a href=/categories/software/deekseek-mynote/>DeepSeek 搭建本地个人知识库，一键安装及保姆级教程来了！</a></li>
+<li><a href=/categories/software/250218-fanyi-immersivetranslate/>打破语言壁垒！沉浸式翻译神器5大黑科技带你畅游全球资讯！</a></li>
+<li><a href=/categories/software/ios-movie-app/>【持续更新】免费追剧神器大集合！苹果/安卓/iOS/Android双平台观影APP一键解锁，高清无广畅看全球热剧！</a></li>
 </ul>
 </div>
 <div class="post-meta meta-tags">
@@ -215,20 +223,27 @@
 </div>
 <footer id=footer>
 <div>
-&copy; 2025 <a href=https://www.tushushare.com/ target=_blank>土叔分享</a>
+&copy; 2025 <a href=https://www.tushushare.com/>土叔分享 By 土叔</a>
 </div>
 <br>
+<div>
+<div class=github-badge>
+<a href=https://gohugo.io/ target=_black rel=nofollow><span class=badge-subject>Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+</div>
+<div class=github-badge>
+<a href=https://www.flysnow.org/ target=_black><span class=badge-subject>Design by</span><span class="badge-value bg-brightgreen">土叔</span></a>
+</div>
+<div class=github-badge>
+<a href=https://github.com/flysnow-org/maupassant-hugo target=_black><span class=badge-subject>Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+</div>
+</div>
 </footer>
 <script type=text/javascript>window.MathJax={tex2jax:{inlineMath:[['$','$']],processEscapes:!0}}</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-<a id=rocket href=#top target=_blank></a>
+<script src="//cdn.bootcdn.net/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script src=//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script>
+<a id=rocket href=#top></a>
 <script type=text/javascript src="/js/totop.js?v=0.0.0" async></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215379375-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-215379375-1','auto'),ga('send','pageview'))</script>
 <script type=text/javascript src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js async></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7116725766468109" crossorigin=anonymous></script>
-<ins class=adsbygoogle style=display:block data-ad-client=ca-pub-7116725766468109 data-ad-slot=1746158871 data-ad-format=auto data-full-width-responsive=true></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
 <div id=secondary>
 <section class=widget>
@@ -239,7 +254,7 @@
 </form>
 </section>
 <section class=widget>
-<h3 class=widget-title>最近文章</h3>
+<h3 class=widget-title>Latest articles</h3>
 <ul class=widget-list>
 <li>
 <a href=https://www.tushushare.com/categories/other/must_view/ title=【置顶必看】土叔分享必看，软件资源，实用网站，你想找的，啥都有！！！ target=_blank>【置顶必看】土叔分享必看，软件资源，实用网站，你想找的，啥都有！！！</a>
@@ -284,7 +299,20 @@
 </ul>
 </section>
 <section class=widget>
-<h3 class=widget-title><a href=/tags/>标签</a></h3>
+<h3 class=widget-title><a href=/categories/>Categories</a></h3>
+<ul class=widget-list>
+<li><a href=https://www.tushushare.com/categories/baidu/ target=_blank>baidu (12)</a></li>
+<li><a href=https://www.tushushare.com/categories/chatgpt/ target=_blank>chatgpt (7)</a></li>
+<li><a href=https://www.tushushare.com/categories/games/ target=_blank>games (20)</a></li>
+<li><a href=https://www.tushushare.com/categories/money/ target=_blank>money (8)</a></li>
+<li><a href=https://www.tushushare.com/categories/other/ target=_blank>other (63)</a></li>
+<li><a href=https://www.tushushare.com/categories/software/ target=_blank>software (164)</a></li>
+<li><a href=https://www.tushushare.com/categories/vps/ target=_blank>vps (2)</a></li>
+<li><a href=https://www.tushushare.com/categories/website/ target=_blank>website (56)</a></li>
+</ul>
+</section>
+<section class=widget>
+<h3 class=widget-title><a href=/tags/>Tags</a></h3>
 <div class=tagcloud>
 <a href=https://www.tushushare.com/tags/2022%E9%AB%98%E6%80%A7%E4%BB%B7%E6%AF%94VPS%E6%8E%A8%E8%8D%90/ target=_blank>2022高性价比VPS推荐</a>
 <a href=https://www.tushushare.com/tags/Android/ target=_blank>Android</a>
@@ -375,7 +403,7 @@
 </div>
 </section>
 <section class=widget>
-<h3 class=widget-title>友情链接</h3>
+<h3 class=widget-title>Links</h3>
 <ul class=widget-list>
 <li>
 <a target=_blank href=http://www.qszk.cn/ title=秋色之空>秋色之空</a>
@@ -385,9 +413,12 @@
 </li>
 </ul>
 </section>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7116725766468109" crossorigin=anonymous></script>
-<ins class=adsbygoogle style=display:block data-ad-client=ca-pub-7116725766468109 data-ad-slot=6474991971 data-ad-format=auto data-full-width-responsive=true></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+<section class=widget>
+<h3 class=widget-title>Meta</h3>
+<ul class=widget-list>
+<li><a href=https://www.tushushare.com/index.xml>RSS</a></li>
+</ul>
+</section>
 </div>
 </div>
 </div>

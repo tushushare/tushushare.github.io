@@ -6,5 +6,8 @@ Disallow: /api/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /tmp/
+Disallow: /tags/
+Disallow: /*/index.xml
+Disallow: /index.xml
 
 Sitemap: https://www.tushushare.com/sitemap.xml
